@@ -109,7 +109,8 @@ You also can follow the GIF below to set up the WIFI:
 
 ### Download the Script
 ```
-$ git clone TODO
+$ git clone git@github.com:gumstix/cameras.git
+$ cd cameras
 ```
 
 ### Run the script
