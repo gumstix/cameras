@@ -20,7 +20,7 @@ Follow Instructions [HERE][Gumstix Getting Started] to get a working image based
 
 ### Connect Camera
 Connect your chosen camera using the ribbon cable provided as shown below:
-![][caspa camera connection]
+[[/wiki-pics/wiki-CaspaConnection.jpg|Caspa Camera on the left, Tiny Caspa Camera on the right at Gumstix]]
 
 #### Connect Caspa Camera (mt9v032)
 The Caspa Camera (mt9v032) is set as default in Gumstix Yocto image
@@ -103,4 +103,4 @@ $ ./camera_host.sh
 [Caspa™ VL]:https://store.gumstix.com/cameras-displays-gps/cameras/caspa-vl.html
 [Poblano 43C]:https://store.gumstix.com/catalogsearch/result/?q=+poblano
 [Gumstix Getting Started]:https://www.gumstix.com/support/getting-started/
-[caspa camera connection]:https://drive.google.com/uc?export=download&id=1i3Etwl8zEKI6NKo7QzQko1KmTB_KwtbG "Caspa Camera on the left, Tiny Caspa Camera on the right"
+
