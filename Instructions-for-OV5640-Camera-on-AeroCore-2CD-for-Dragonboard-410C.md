@@ -131,7 +131,8 @@ You also can follow the GIF below to set up the WIFI:
 
 Download the script to test the cameras on your console:
 ```
-$ git clone "TODO: this repo"
+$ git clone git@github.com:gumstix/cameras.git
+$ cd cameras
 $ chmod 777 cam0_cam1_gstreamer_h264_stream_dragonboard.sh
 ```
 
