@@ -215,19 +215,21 @@ Then run following to capture an image:
 gst-launch-1.0 -v v4l2src device=/dev/video3 num-buffers=1 ! 'video/x-raw,format=NV12,width=640,height=480,framerate=10/1' ! jpegenc ! filesink location=image01.jpeg
 ```
 
-[CSI0CSI1connection]:https://drive.google.com/uc?export=download&id=1mBTSX3BOvVuXx213ZbPycV1IvrNaF0P4
+[CSI0CSI1connection]:wiki-pics/wiki-CSI0CSI1connection.gif
+[touchscreenribbonconnection]:wiki-pics/wiki-touchscreenribbonconnection.jpg
+[DSIconnection]:wiki-pics/wiki-DSIconnection.jpg
+[connectwifidesktop]:wiki-pics/wiki-connectwifi-desktop.gif
+
 [Desktopimage]:https://gumstix-yocto.s3.amazonaws.com/2018-04-09/dragonboard-410c/morty/gumstix-xfce-image-dragonboard-410c.sdcard.xz
-[touchscreenribbonconnection]:https://drive.google.com/uc?export=download&id=1MxzTuzKVY6Ow0QLZNe9Zwv8ggt1N5Oa8
-[DSIconnection]:https://drive.google.com/uc?export=download&id=1UqQDlGw09q8Ule2mU_YBv40ZpUbamQrk
 [OSD 5.5" AMOLED DSI Touch Display]:https://store.gumstix.com/cameras-displays-gps/displays/osd-55-dsi-display.html
 [Dragonboard 410C]:https://developer.qualcomm.com/hardware/dragonboard-410c
 [AeroCore 2CD for Dragonboard 410C]:https://store.gumstix.com/aerocore-2cd-for-dragonboard.html
 [KaiLapTech OV5640-V4320]:https://store.gumstix.com/cameras-displays-gps/cameras/klt-ov5640.html
-[connectwifidesktop]:https://drive.google.com/uc?export=download&id=1wQaEA5u9SfyQmCFenQMvm9WTe1Mk_LPE
 [Geppetto]:https://geppetto.gumstix.com
-[boot-dragonboard-410c-CSI0.img]:https://drive.google.com/uc?export=download&id=1XLfy2qN2aDdnGmqAiqj7r1Gb8_aI-C5E
-[boot-dragonboard-410c-CSI1.img]:https://drive.google.com/uc?export=download&id=1SivOCNsRHfqXv90Z5oS1y89YAK14yRQ_
-[boot-dragonboard-410c-CSI0CSI1-HDMI.img]:https://drive.google.com/uc?export=download&id=1nYiV7cwA2u6ljf0an7C1Fa9mr147_GsO
-[boot-dragonboard-410c-CSI0-HDMI.img]:https://drive.google.com/uc?export=download&id=1fBFg0fQxLaYLmlPFeGX0cfEABimt64l2
-[boot-dragonboard-410c-CSI1-HDMI.img]:https://drive.google.com/uc?export=download&id=1VtlLTn76o_DApByEdkY5yP8_Pff3F6SV
+
+[boot-dragonboard-410c-CSI0.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI0.img
+[boot-dragonboard-410c-CSI1.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI1.img
+[boot-dragonboard-410c-CSI0CSI1-HDMI.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI0CSI1-HDMI.img
+[boot-dragonboard-410c-CSI0-HDMI.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI0-HDMI.img
+[boot-dragonboard-410c-CSI1-HDMI.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI1-HDMI.img
 
