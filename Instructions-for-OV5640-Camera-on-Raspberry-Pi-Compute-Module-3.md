@@ -79,7 +79,6 @@ gst-launch-1.0 -v v4l2src num-buffers=1 ! 'video/x-raw,width=1920,height=1080,fo
 
 [YoctoDesktopimage]:https://gumstix-yocto.s3.amazonaws.com/2018-04-21/raspberrypi-cm3/rocko/gumstix-xfce-image-raspberrypi-cm3.rpi-sdimg.xz
 [RaspbianDesktopimage]:https://gumstix-raspbian.s3.amazonaws.com/2018-04-24/raspberrypi-cm3/rpi-4.14.y/2018-04-18-raspbian-stretch.img.xz
-[rpicamerascript]:https://drive.google.com/uc?export=download&id=1THBzrG_2duMrMpdZIczZ9IC3HFMqaDwh
 [KaiLapTech OV5640-V4320]:https://store.gumstix.com/cameras-displays-gps/cameras/klt-ov5640.html
 [Geppetto]:https://geppetto.gumstix.com
 [OV5640 CSI-2 Test Board]:https://geppetto.gumstix.com/#!/design/2077
