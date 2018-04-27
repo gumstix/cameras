@@ -1,8 +1,20 @@
-Welcome to the cameras wiki!
+Welcome to the Gumstix Camera guide!
 
-My first commit will include this command for safe keeping:
+The following file contains instructions on how to use our cameras with different
+COMs and processors we have available.
 
+- Instructions for [Caspa Camera on an Overo COM].
 
-`gst-launch-1.0 v4l2src device=/dev/video3 ! 'video/x-raw,format=NV12,width=640,height=480,framerate=10/1' ! videoconvert ! v4l2video5h264enc ! filesink location=file.mkv`
+- Instructions for [OV5640 Camera on AeroCore 2CD for DragonBoard 410C].
 
-This works for OV5640 cameras with Dragonboard 410c using AutoBSP device trees for streaming H.264 video at 1080p.  We will be adding more descriptive instructions for various platforms very soon.
+- Instructions for [OV5640 Camera on Raspberry Pi Compute Module 3].
+
+- Instructions for [OV5640 Camera on Zircon COM] (Our newest COM and possible replacement for Intel Joule module).
+
+If you cannot find what you need, please send us an email at [support@gumstix.com](mailto:suppoer@gumstix.com).
+
+<!---Make sure these links are always up to date--->
+[Caspa Camera on an Overo COM]:https://github.com/jayzhao93/hello-gumstix/wiki/Instructions-for-Caspa-Camera-and-Tiny-Caspa-Camera-on-Overo-COMs-and-Poblano
+[OV5640 Camera on AeroCore 2CD for DragonBoard 410C]:https://github.com/jayzhao93/hello-gumstix/wiki/Instructions-for-OV5640-Camera-on-AeroCore-2CD-for-Dragonboard-410C
+[OV5640 Camera on Raspberry Pi Compute Module 3]:https://github.com/jayzhao93/hello-gumstix/wiki/Instructions-for-OV5640-Camera-on-Raspberry-Pi-Compute-Module-3
+[OV5640 Camera on Zircon COM]:https://github.com/jayzhao93/hello-gumstix/wiki/Instructions-for-OV5640-Camera-on-Zircon
