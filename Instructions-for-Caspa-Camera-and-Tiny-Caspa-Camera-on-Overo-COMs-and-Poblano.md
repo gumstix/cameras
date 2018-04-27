@@ -27,15 +27,13 @@ The Caspa Camera (mt9v032) is set as default in Gumstix Yocto image
 #### Connect Tiny Caspa Camera (ov7692)
 The Tiny Caspa Camera need some modification on the device tree.
 
-First, plug in the SD card you prepared, run:
+First, download the new dtb files [here](Tiny-Caspa-dtbs.zip "dtb files for Tiny caspa camera")
+Then, extract it, and plug in the SD card you prepared, run:
 ```
-# Download the source files
-$ git clone TODO
-
 # Mount the root filesystem, note change the "X" in /dev/sdX2 accroding to $ lsblk 
 # where your SD card is mounted in your machine
 $ sudo mount -t ext3 /dev/sdX2 /media/rootfs
-$ sudo cp -rf /TODO/* /media/rootfs/boot/ && sync
+$ sudo cp -rf /Tiny-Caspa-dtbs/* /media/rootfs/boot/ && sync
 
 # Unmount your rootfs partition
 $ sudo umount /media/rootfs
