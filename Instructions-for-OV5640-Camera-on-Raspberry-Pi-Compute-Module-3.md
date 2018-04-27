@@ -1,10 +1,8 @@
 # Instructions for OV5640 Camera on Raspberry Pi Compute Module 3
 
 ## Hardware
-### Camera
-- [KaiLapTech OV5640-V4320]
-### Flasher
-- [Gumstix Pi Compute FastFlash]
+Camera: [KaiLapTech OV5640-V4320]
+Flasher: [Gumstix Pi Compute FastFlash]
 ## Software
 To prepare a SD card for the Raspberry Pi Compute Module 3, please follow the steps below:
 
