@@ -130,15 +130,14 @@ Run following to capture an image:
 gst-launch-1.0 -v imxv4l2videosrc num-buffers=1 imx-capture-mode=5 device=/dev/video1 ! 'video/x-raw,width=1920,height=1080,format=I420,framerate=15/1' ! jpegenc ! filesink location=image01.jpeg
 ```
 
-[CSIconnection]:https://drive.google.com/uc?export=download&id=16VQVhcyOWQktukk6pU3lw9P5X2QrYL6A
+[CSIconnection]:wiki-pics/wiki-CSIconnection-zircon.jpg
+[connectwifidesktop]:wiki-pics/wiki-connectwifi-desktop.gif
+
 [Desktopimage]:https://drive.google.com/uc?export=download&id=1oP1155Lys49jUnnBL2BguQYLzvhjwpDd
-[imx6camerascript]:https://drive.google.com/uc?export=download&id=1ndR7syhLr5EsLt6IX10xOBQZJYg8criG
 [KaiLapTech OV5640-V4320]:https://store.gumstix.com/klt-ov5640.html
-[connectwifidesktop]:https://drive.google.com/uc?export=download&id=1wQaEA5u9SfyQmCFenQMvm9WTe1Mk_LPE
 [Geppetto]:https://geppetto.gumstix.com
 [OV5640 CSI-2 Test Board]:https://geppetto.gumstix.com/#!/design/2077
 [5V/3.5A US Power Adapter]:https://store.gumstix.com/accessories/wall-adapters/5v35a-us-power-adapter.html
 [Zircon]:https://store.gumstix.com/zircon.html
-[u-boot.imx]:https://drive.google.com/uc?export=download&id=1WxHpUDVUizcLhA9rJTzTEkS3fm2WKEY6
 [Expansion Board Selection at Gumstix]:https://store.gumstix.com/development-boards/intel-joule-module.html
 
