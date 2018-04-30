@@ -136,10 +136,12 @@ Download the script to test the cameras on your console:
 $ git clone git@github.com:gumstix/cameras.git
 $ cd cameras
 $ chmod 777 cam0_cam1_gstreamer_h264_stream_dragonboard.sh
+$ chmod 777 cam0_cam1_gstreamer_local_dragonboard.sh
 ```
 
 ### Run the script
-Now, run the script:
+#### To stream over Internet
+Run the script:
 ```
 $ ./cam0_cam1_gstreamer_h264_stream_dragonboard.sh
 ```
@@ -148,7 +150,14 @@ Follow the instructions in the console.
 
 This script is an example of gstreamer code that has options to use either one of the cameras or both cameras 
 with H264 encoding and UDP stream over Internet.
+#### To stream on the display (touchscreen/HDMI)
+Open a terminal in the desktop of dragonboard, run:
+```
+$ ./cam0_cam1_gstreamer_local_dragonboard.sh
+```
 
+This script is an example of gstreamer code that has options to use either one of the cameras or both cameras 
+stream directly to the display using "glimagesink".
 ## Debug Instructions
 ### Check if one or both cameras get probed properly
 Run the command below to display the entities of the GPU source.
