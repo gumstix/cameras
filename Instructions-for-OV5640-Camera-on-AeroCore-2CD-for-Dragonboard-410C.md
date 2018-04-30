@@ -151,10 +151,11 @@ Follow the instructions in the console.
 This script is an example of gstreamer code that has options to use either one of the cameras or both cameras 
 with H264 encoding and UDP stream over Internet.
 #### To stream on the display (touchscreen/HDMI)
-Open a terminal in the desktop of dragonboard, run:
+Open a terminal on the desktop of dragonboard, run:
 ```
 $ ./cam0_cam1_gstreamer_local_dragonboard.sh
 ```
+Note: This script is not going to work if you run it through "CONSOLE" or "ssh".
 
 This script is an example of gstreamer code that has options to use either one of the cameras or both cameras 
 stream directly to the display using "glimagesink".
