@@ -52,6 +52,8 @@ There is also an arrow next to each of the connectors to indicate the direction 
 
 To connect just one camera requires device tree changes. Below are the pre-compiled boot-dragonboard.img for each of the camera connector:
 
+[boot-dragonboard-410c-CSI0CSI1.img]
+
 [boot-dragonboard-410c-CSI0.img]
 
 [boot-dragonboard-410c-CSI1.img]
@@ -228,6 +230,7 @@ gst-launch-1.0 -v v4l2src device=/dev/video3 num-buffers=1 ! 'video/x-raw,format
 [KaiLapTech OV5640-V4320]:https://store.gumstix.com/cameras-displays-gps/cameras/klt-ov5640.html
 [Geppetto]:https://geppetto.gumstix.com
 
+[boot-dragonboard-410c-CSI0CSI1.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI0CSI1.img
 [boot-dragonboard-410c-CSI0.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI0.img
 [boot-dragonboard-410c-CSI1.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI1.img
 [boot-dragonboard-410c-CSI0CSI1-HDMI.img]:boot-dragonboard-410c/boot-dragonboard-410c-CSI0CSI1-HDMI.img
