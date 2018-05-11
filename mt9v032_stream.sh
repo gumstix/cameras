@@ -29,8 +29,8 @@ elif hash gst-launch 2>/dev/null; then
 else
     echo >&2 "Gstreamer not installed. Installing..."
     smart update
-    smart install gstreamer1.0
-    smart install gstreamer1.0-plugins-good
+    yes | smart install gstreamer1.0
+    yes | smart install gstreamer1.0-plugins-good
     if hash gst-launch-1.0 2>/dev/null; then
         gname="gst-launch-1.0";
     elif hash gst-launch 2>/dev/null; then
