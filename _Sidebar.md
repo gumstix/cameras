@@ -1,5 +1,8 @@
-**Caspa/Tiny Caspa**
-- [Overo](https://github.com/gumstix/cameras/wiki/Instructions-for-Caspa-Camera-and-Tiny-Caspa-Camera-on-Overo-COMs-and-Poblano)
+**Caspa**
+- [Overo](https://github.com/gumstix/cameras/wiki/Instructions-for-Caspa-Camera-and-Tiny-Caspa-Camera-on-Overo-COMs)
+
+**Tiny Caspa**
+- [Overo](https://github.com/gumstix/cameras/wiki/Instructions-for-Caspa-Camera-and-Tiny-Caspa-Camera-on-Overo-COMs)
 - [Poblano]
 
 **OV5640**
