@@ -1,11 +1,10 @@
-# Instructions for Caspa Camera and Tiny Caspa Camera on Overo COMs and Poblano
+# Instructions for Caspa Camera and Tiny Caspa Camera on Overo COMs
 
 ## Hardware
 
 ### Boards
 Choose either
 - an [Overo COMs] with one of the [Overo Expansion Boards] OR
-- a [Poblano 43C]
 
 ### Cameras
 Choose one of the following:
