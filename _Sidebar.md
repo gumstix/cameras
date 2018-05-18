@@ -1,5 +1,6 @@
 **Caspa/Tiny Caspa**
-- [Overo/Poblano](https://github.com/gumstix/cameras/wiki/Instructions-for-Caspa-Camera-and-Tiny-Caspa-Camera-on-Overo-COMs-and-Poblano)
+- [Overo](https://github.com/gumstix/cameras/wiki/Instructions-for-Caspa-Camera-and-Tiny-Caspa-Camera-on-Overo-COMs-and-Poblano)
+- [Poblano]
 
 **OV5640**
 - [Dragonboard-410c](https://github.com/gumstix/cameras/wiki/Instructions-for-OV5640-Camera-on-AeroCore-2CD-for-Dragonboard-410C)
