@@ -12,5 +12,6 @@
 
 **Caspa HD (OV5670)**
 - Coming Soon
+
 **Caspa 4K (IMX214)**
 - Coming Soon
