@@ -11,5 +11,6 @@
 - [Raspberry Pi CM3](https://github.com/gumstix/cameras/wiki/Instructions-for-OV5640-Camera-on-Raspberry-Pi-Compute-Module-3)
 
 **Caspa HD (OV5670)**
-
+- Coming Soon
 **Caspa 4K (IMX214)**
+- Coming Soon
