@@ -58,15 +58,15 @@ $ chmod a+x ov7692_stream.sh
 $ ./ov7692_stream.sh
 ```
 
-On the host machine, run `camera_host.sh`. Again, it will detect if `gstreamer` is installed. 
-If everything is working, you will see the video in the pop-up window.
+On the host machine, run `camera_host.sh`as following:
 
 ```
-$ git clone git@github.com:gumstix/cameras.git
-$ cd cameras
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/camera_host.sh
 $ chmod a+x camera_host.sh
 $ ./camera_host.sh
 ```
+Again, it will detect if `gstreamer` is installed. 
+If everything is working, you will see the video in the pop-up window.
 
 [Overo COMs]:https://store.gumstix.com/coms/overo-coms.html
 [Overo Expansion Boards]:https://store.gumstix.com/development-boards/overo-expansion.html
