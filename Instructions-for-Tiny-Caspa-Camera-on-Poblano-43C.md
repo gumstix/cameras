@@ -17,7 +17,7 @@ Follow Instructions [HERE][Gumstix Getting Started] to get a working image based
 
 ### Connect Camera
 Connect your chosen camera using the ribbon cable provided as shown below:
-[[/wiki-pics/wiki-CaspaConnection.jpg|Caspa Camera on the left, Tiny Caspa Camera on the right at Gumstix]]
+[[/wiki-pics/wiki-TinyCaspaonPoblano.jpg]]
 
 ### Connect Internet
 Depending on what board you are running, you have three options:
