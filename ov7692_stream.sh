@@ -55,10 +55,38 @@ else
     enter_ip
 fi
 
-modprobe omap3-isp
+echo "###############################################################"
+echo
+echo "Are you running Tiny Caspa Camera on"
+echo "Overo COMs or Poblano?"
+echo
+echo "###############################################################"
+echo
+echo "Select 1 for Overo COMs"
+echo "Select 2 for Poblano"
+echo
 
-media-ctl -r -l '"OV7692":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":2->"OMAP3 ISP preview":0[1], "OMAP3 ISP preview":1->"OMAP3 ISP resizer":0[1], "OMAP3 ISP resizer":1->"OMAP3 ISP resizer output":0[1]'
+ENTERFLAG=0
+while [ $ENTERFLAG -ne 1 ]
+do
+    read -p "The camera you chosen [1/2]: " key
+    if [ $key -eq 1 ] || [ $key -eq 2 ]
+    then
+        ENTERFLAG=1
+    else
+        echo 
+        echo "### ERROR ###"
+        echo "Invalid selection"
+        echo
+    fi
+done
 
-media-ctl -V '"OV7692":0[SGRBG8 640x480], "OMAP3 ISP CCDC":2[SGRBG8 640x480], "OMAP3 ISP preview":1[UYVY 640x480], "OMAP3 ISP resizer":1[UYVY 640x480]'
-
-$gname -v v4l2src device=/dev/video6 ! rtpvrawpay ! udpsink host=$ip_addr port=6666
+if [ $key -eq 1 ]; then
+    modprobe omap3-isp
+    media-ctl -r -l '"OV7692":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":2->"OMAP3 ISP preview":0[1], "OMAP3 ISP preview":1->"OMAP3 ISP resizer":0[1], "OMAP3 ISP resizer":1->"OMAP3 ISP resizer output":0[1]'
+    media-ctl -V '"OV7692":0[SGRBG8 640x480], "OMAP3 ISP CCDC":2[SGRBG8 640x480], "OMAP3 ISP preview":1[UYVY 640x480], "OMAP3 ISP resizer":1[UYVY 640x480]'
+    $gname -v v4l2src device=/dev/video6 ! rtpvrawpay ! udpsink host=$ip_addr port=6666
+elif [ $key -eq 2 ]; then
+    echo "Currently Only support capture image, this will output a Jpeg file called test.jpeg"
+    $gname -v v4l2src num-buffers=1 ! bayer2rgb ! jpegenc ! filesink location=test.jpeg
+fi
