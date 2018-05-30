@@ -82,11 +82,13 @@ do
 done
 
 if [ $key -eq 1 ]; then
-    modprobe omap3-isp
-    media-ctl -r -l '"OV7692":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":2->"OMAP3 ISP preview":0[1], "OMAP3 ISP preview":1->"OMAP3 ISP resizer":0[1], "OMAP3 ISP resizer":1->"OMAP3 ISP resizer output":0[1]'
-    media-ctl -V '"OV7692":0[SGRBG8 640x480], "OMAP3 ISP CCDC":2[SGRBG8 640x480], "OMAP3 ISP preview":1[UYVY 640x480], "OMAP3 ISP resizer":1[UYVY 640x480]'
-    $gname -v v4l2src device=/dev/video6 ! rtpvrawpay ! udpsink host=$ip_addr port=6666
+    echo -e """Please run this command on host machine to get stream video \n*************\n\ngst-launch-1.0 udpsrc port=6666 ! \"application/x-rtp, sampling=(string)YCbCr-4:2:2, depth=(string)8, width=(string)640, height=(string)480\" ! rtpvrawdepay ! glimagesink\n\n************\n\n"
+    read -p "Press anykey to start streaming using Tiny Caspa Camera with Overo COMs" anykey
+    media-ctl -r -l '"OV7692":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":1->"OMAP3 ISP CCDC output":0[1]'
+    media-ctl -V '"OV7692":0[YUYV2X8 640x480], "OMAP3 ISP CCDC":1[YUYV2X8 640x480]'
+    $gname -v v4l2src device=/dev/video2 ! 'video/x-raw, width=640, height=480,format=YUY2, framerate=10/1' ! videoconvert ! rtpvrawpay ! udpsink host=$ip_addr port=6666
 elif [ $key -eq 2 ]; then
-    echo "Currently Only support capture image, this will output a Jpeg file called test.jpeg"
-    $gname -v v4l2src num-buffers=1 ! bayer2rgb ! jpegenc ! filesink location=test.jpeg
+    echo -e """Please run this command on host machine to get stream video \n*************\n\ngst-launch-1.0 udpsrc port=6666 ! \"application/x-rtp, sampling=(string)YCbCr-4:2:2, depth=(string)8, width=(string)640, height=(string)480\" ! rtpvrawdepay ! glimagesink\n\n************\n\n"
+    read -p "Press anykey to start streaming using Tiny Caspa Camera with Poblano" anykey
+    $gname -v v4l2src ! videoconvert ! rtpvrawpay ! udpsink host=$ip_addr port=6666
 fi

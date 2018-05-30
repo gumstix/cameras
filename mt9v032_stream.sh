@@ -59,6 +59,6 @@ modprobe omap3-isp
 
 media-ctl -r -l '"mt9v032 2-005c":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":2->"OMAP3 ISP preview":0[1], "OMAP3 ISP preview":1->"OMAP3 ISP resizer":0[1], "OMAP3 ISP resizer":1->"OMAP3 ISP resizer output":0[1]'
 
-media-ctl -V '"mt9v032 2-005c":0[SGRBG10 752x480], "OMAP3 ISP CCDC":2[SGRBG10 752x480], "OMAP3 ISP preview":1[UYVY 752x480], "OMAP3 ISP resizer":1[UYVY 752x480]'
+media-ctl -V '"mt9v032 2-005c":0[SGRBG10 752x480], "OMAP3 ISP CCDC":2[SGRBG10 752x480], "OMAP3 ISP preview":1[YUYV2X8 752x480], "OMAP3 ISP resizer":1[YUYV2X8 752x480]'
 
-$gname -v v4l2src device=/dev/video6 ! rtpvrawpay ! udpsink host=$ip_addr port=6666
+$gname -v v4l2src device=/dev/video6 ! videoconvert !rtpvrawpay ! udpsink host=$ip_addr port=6666

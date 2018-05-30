@@ -59,5 +59,5 @@ fi
 if [ $key -eq 1 ]; then
     $gname -v udpsrc port=6666 caps="application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)RAW, sampling=(string)YCbCr-4:2:2, depth=(string)8, width=(string)752, height=(string)480, colorimetry=(string)SMPTE240M, payload=(int)96" ! rtpvrawdepay ! xvimagesink
 elif [ $key -eq 2 ]; then
-    $gname -v udpsrc port=6666 caps="application/x-rtp, media=(string)video, clock-rate=(int)90000, encoding-name=(string)RAW, sampling=(string)YCbCr-4:2:2, depth=(string)8, width=(string)640, height=(string)480, colorimetry=(string)SMPTE240M, payload=(int)96" ! rtpvrawdepay ! xvimagesink
+    $gname -v udpsrc port=6666 ! "application/x-rtp, sampling=(string)YCbCr-4:2:2, depth=(string)8, width=(string)640, height=(string)480" ! rtpvrawdepay ! glimagesink
 fi
