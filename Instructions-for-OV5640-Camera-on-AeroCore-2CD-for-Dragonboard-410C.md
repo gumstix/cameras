@@ -133,10 +133,10 @@ You also can follow the GIF below to set up the WIFI:
 
 Download the script to test the cameras on your console:
 ```
-$ git clone git@github.com:gumstix/cameras.git
-$ cd cameras
-$ chmod 777 cam0_cam1_gstreamer_h264_stream_dragonboard.sh
-$ chmod 777 cam0_cam1_gstreamer_local_dragonboard.sh
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/cam0_cam1_gstreamer_h264_stream_dragonboard.sh
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/cam0_cam1_gstreamer_local_dragonboard.sh
+$ chmod a+x cam0_cam1_gstreamer_h264_stream_dragonboard.sh
+$ chmod a+x cam0_cam1_gstreamer_local_dragonboard.sh
 ```
 
 ### Run the script
