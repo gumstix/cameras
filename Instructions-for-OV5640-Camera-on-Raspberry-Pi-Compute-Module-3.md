@@ -52,9 +52,8 @@ The  is through a USB to Gigabit Ethernet Adapter.
 #### Method 1: 
 Download the script to test the cameras on your console:
 ```
-$ git clone git@github.com:gumstix/cameras.git
-$ cd cameras
-$ chmod 777 cam_gstreamer_h264_stream_rpicm3.sh
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/cam_gstreamer_h264_stream_rpicm3.sh
+$ chmod a+x cam_gstreamer_h264_stream_rpicm3.sh
 ```
 #### Method 2:
 Download the script [HERE][rpicamerascript]
