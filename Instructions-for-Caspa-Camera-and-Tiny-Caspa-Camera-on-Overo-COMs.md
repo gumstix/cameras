@@ -72,16 +72,14 @@ and `ov7692_stream.sh` that runs on the board, it will detect if `gstreamer` is 
 not, setup the pipelines and ask what IP address you want to stream to.
 
 ```
-$ git clone https://github.com/gumstix/cameras.git
-
 # Run the following if you have a Caspa camera connected
-$ cd cameras
-$ chmod 777 mt9v032_stream.sh
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/mt9v032_stream.sh
+$ chmod a+x mt9v032_stream.sh
 $ ./mt9v032_stream.sh
 
 # Run the following if you have a Tiny Caspa camera connected
-$ cd cameras
-$ chmod 777 ov7692_stream.sh
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/ov7692_stream.sh
+$ chmod a+x ov7692_stream.sh
 $ ./ov7692_stream.sh
 ```
 
@@ -91,7 +89,7 @@ If everything is working, you will see the video in the pop-up window.
 ```
 $ git clone https://github.com/gumstix/cameras.git
 $ cd cameras
-$ chmod 777 camera_host.sh
+$ chmod a+x camera_host.sh
 $ ./camera_host.sh
 ```
 
