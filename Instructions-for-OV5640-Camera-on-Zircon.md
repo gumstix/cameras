@@ -109,14 +109,13 @@ You also can follow the GIF below to set up the WIFI:
 
 ### Download the Script
 ```
-$ git clone git@github.com:gumstix/cameras.git
-$ cd cameras
+$ wget https://raw.githubusercontent.com/gumstix/cameras/master/cam_gstreamer_h264_stream_imx6scm.sh
 ```
 
 ### Run the script
 Now, run the script:
 ```
-$ chmod 777 cam_gstreamer_h264_stream_imx6scm.sh
+$ chmod a+x cam_gstreamer_h264_stream_imx6scm.sh
 $ ./cam_gstreamer_h264_stream_imx6scm.sh
 ```
 Follow the instructions in the console.
