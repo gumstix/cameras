@@ -12,3 +12,5 @@ At Gumstix we provide many cameras supported by our various devices.  This inclu
 
 ##  This Repository
 In this GitHub repository, you will find scripts, applications, board support and setup guides for these camera modules as they become available.
+
+**Note: As of Feb. 2019, only the OV5640 cameras are supported for dragonboard-410c on rocko builds. Additional support for other cameras and boards may be provided in the future.**
