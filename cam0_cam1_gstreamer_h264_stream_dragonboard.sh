@@ -72,25 +72,52 @@ do
 	fi
 done
 
+echo -e "\nWhich resolution you want to stream?\nPlease select:
+1. 720P_1280_720
+2. 1080P_1920_1080\n"
+ENTERFLAG=0
+while [ $ENTERFLAG -ne 1 ]
+do
+    read -p "The camera you chosen [1~2]: " reskey
+	if [ $reskey -ge 1 -a $reskey -le 2 ]
+	then
+		ENTERFLAG=1
+	else
+        echo 
+		echo "### ERROR ###"
+        echo "Invalid selection"
+        echo
+	fi
+done
+width=0
+height=0
+if [ $reskey -eq 1 ]; then
+	width=1280
+	height=720
+fi
+if [ $reskey -eq 2 ]; then
+	width=1920
+	height=1080
+fi
 
 if [ $key -eq 1 ]; then
 echo -e "Please run this command on host machine to get stream video from cam0 \n*************\n\ngst-launch-1.0 udpsrc port=4000 ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink\n\n************\n\n"
 read -p "Press anykey to start streaming using cam0" anykey
 # Set the pipeline format for cam0
-media-ctl -d /dev/media0 -V '"ov5640 4-003b":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csiphy0":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csid0":0[fmt:UYVY2X8/1920x1080 field:none],"msm_ispif0":0[fmt:UYVY2X8/1920x1080 field:none],"msm_vfe0_rdi0":0[fmt:UYVY2X8/1920x1080 field:none]'
+media-ctl -d /dev/media0 -V '"ov5640 4-003b":0[fmt:UYVY2X8/1'$width'x'$height' field:none],"msm_csiphy0":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csid0":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_ispif0":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_vfe0_rdi0":0[fmt:UYVY2X8/'$width'x'$height' field:none]'
 
 # Use h264 encoder to stream for cam0
-gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw,format=UYVY,width=1920,height=1080,framerate=10/1' ! videoconvert ! $videoencoder ! h264parse ! rtph264pay ! udpsink host=$ip_addr port=4000
+gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw,format=UYVY,width='$width',height='$height',framerate=10/1' ! videoconvert ! $videoencoder ! h264parse ! rtph264pay ! udpsink host=$ip_addr port=4000
 fi
 
 if [ $key -eq 2 ]; then
 echo -e "Please run this command on host machine to get stream video from cam1 \n*************\n\ngst-launch-1.0 udpsrc port=5000 ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink\n\n************\n\n"
 read -p "Press anykey to start streaming using cam1" anykey
 # Set the pipeline format for cam1
-media-ctl -d /dev/media0 -V '"ov5640 4-003a":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csiphy1":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csid1":0[fmt:UYVY2X8/1920x1080 field:none],"msm_ispif1":0[fmt:UYVY2X8/1920x1080 field:none],"msm_vfe0_rdi1":0[fmt:UYVY2X8/1920x1080 field:none]'
+media-ctl -d /dev/media0 -V '"ov5640 4-003a":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csiphy1":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csid1":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_ispif1":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_vfe0_rdi1":0[fmt:UYVY2X8/'$width'x'$height' field:none]'
 
 # Use h264 encoder to stream for cam1
-gst-launch-1.0 v4l2src device=/dev/video1 ! 'video/x-raw,format=UYVY,width=1920,height=1080,framerate=10/1' ! videoconvert ! $videoencoder ! h264parse ! rtph264pay ! udpsink host=$ip_addr port=5000
+gst-launch-1.0 v4l2src device=/dev/video1 ! 'video/x-raw,format=UYVY,width='$width',height='$height',framerate=10/1' ! videoconvert ! $videoencoder ! h264parse ! rtph264pay ! udpsink host=$ip_addr port=5000
 
 fi
 
@@ -98,10 +125,11 @@ if [ $key -eq 3 ]; then
 echo -e "Please run this command on host machine to get stream video from cam0 and cam1 \n*************\n\ngst-launch-1.0 udpsrc port=6000 ! application/x-rtp,encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! autovideosink\n\n************\n\n"
 read -p "Press anykey to start streaming using cam0 and cam1" anykey
 # Set the pipeline format for cam0
-media-ctl -d /dev/media0 -V '"ov5640 4-003b":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csiphy0":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csid0":0[fmt:UYVY2X8/1920x1080 field:none],"msm_ispif0":0[fmt:UYVY2X8/1920x1080 field:none],"msm_vfe0_rdi0":0[fmt:UYVY2X8/1920x1080 field:none]'
+media-ctl -d /dev/media0 -V '"ov5640 4-003b":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csiphy0":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csid0":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_ispif0":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_vfe0_rdi0":0[fmt:UYVY2X8/'$width'x'$height' field:none]'
 # Set the pipeline format for cam1
-media-ctl -d /dev/media0 -V '"ov5640 4-003a":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csiphy1":0[fmt:UYVY2X8/1920x1080 field:none],"msm_csid1":0[fmt:UYVY2X8/1920x1080 field:none],"msm_ispif1":0[fmt:UYVY2X8/1920x1080 field:none],"msm_vfe0_rdi1":0[fmt:UYVY2X8/1920x1080 field:none]'
-gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw,format=UYVY,width=1920,height=1080,framerate=10/1' ! textoverlay text='CAM0' halignment=left valignment=top font-desc='Sans Italic 24' ! videomixer name=mix sink_1::xpos=0 sink_1::ypos=1080 sink_1::zorder=3  ! videoconvert ! $videoencoder ! h264parse ! rtph264pay ! udpsink host=$ip_addr port=6000 v4l2src device=/dev/video1 ! 'video/x-raw,format=UYVY,width=1920,height=1080,framerate=10/1' ! textoverlay text='CAM1' halignment=left valignment=top font-desc='Sans Italic 24' ! mix.
+media-ctl -d /dev/media0 -V '"ov5640 4-003a":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csiphy1":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_csid1":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_ispif1":0[fmt:UYVY2X8/'$width'x'$height' field:none],"msm_vfe0_rdi1":0[fmt:UYVY2X8/'$width'x'$height' field:none]'
+
+gst-launch-1.0 v4l2src device=/dev/video0 ! 'video/x-raw,format=UYVY,width='$width',height='$height',framerate=10/1' ! textoverlay text='CAM0' halignment=left valignment=top font-desc='Sans Italic 24' ! videomixer name=mix sink_1::xpos=0 sink_1::ypos=640 sink_1::zorder=3  ! videoconvert ! $videoencoder ! h264parse ! rtph264pay ! udpsink host=$ip_addr port=6000 v4l2src device=/dev/video1 ! 'video/x-raw,format=UYVY,width='$width',height='$height',framerate=10/1' ! textoverlay text='CAM1' halignment=left valignment=top font-desc='Sans Italic 24' ! mix.
 
 fi
 

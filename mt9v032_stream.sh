@@ -22,22 +22,6 @@ enter_ip () {
     echo "$ip_addr" > $destdir
 }
 
-if hash gst-launch-1.0 2>/dev/null; then
-    gname="gst-launch-1.0";
-elif hash gst-launch 2>/dev/null; then
-    gname="gst-launch";
-else
-    echo >&2 "Gstreamer not installed. Installing..."
-    smart update
-    yes | smart install gstreamer1.0
-    yes | smart install gstreamer1.0-plugins-good
-    if hash gst-launch-1.0 2>/dev/null; then
-        gname="gst-launch-1.0";
-    elif hash gst-launch 2>/dev/null; then
-        gname="gst-launch";
-    fi
-fi
-
 # echo $gname
 if [ -f "$destdir" ]; then
     echo
@@ -61,4 +45,4 @@ media-ctl -r -l '"mt9v032 2-005c":0->"OMAP3 ISP CCDC":0[1], "OMAP3 ISP CCDC":2->
 
 media-ctl -V '"mt9v032 2-005c":0[SGRBG10 752x480], "OMAP3 ISP CCDC":2[SGRBG10 752x480], "OMAP3 ISP preview":1[YUYV2X8 752x480], "OMAP3 ISP resizer":1[YUYV2X8 752x480]'
 
-$gname -v v4l2src device=/dev/video6 ! videoconvert !rtpvrawpay ! udpsink host=$ip_addr port=6666
+gst-launch-1.0 -v v4l2src device=/dev/video6 ! videoconvert !rtpvrawpay ! udpsink host=$ip_addr port=6666
