@@ -30,7 +30,7 @@ echo -e "Which camera you want to stream?\n Please select:\n 1. cam0 (CSI0)\n 2.
 ENTERFLAG=0
 while [ $ENTERFLAG -ne 1 ]
 do
-    read -p "The camera you chosen [1~3]: " key
+    read -p "The camera you have chosen [1~3]: " key
 	if [ $key -eq 1 ] || [ $key -eq 2 ] || [ $key -eq 3 ]
 	then
 		ENTERFLAG=1
@@ -45,6 +45,7 @@ done
 
 if [ $key -eq 1 ]; then
 read -p "Press anykey to start streaming using cam0" anykey
+
 # Set the pipeline format for cam0
 media-ctl -d /dev/media0 -V '"ov5640 4-003b":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_csiphy0":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_csid0":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_ispif0":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_vfe0_rdi0":0[fmt:UYVY8_2X8/1920x1080 field:none]'
 
@@ -54,6 +55,7 @@ fi
 
 if [ $key -eq 2 ]; then
 read -p "Press anykey to start streaming using cam1" anykey
+
 # Set the pipeline format for cam1
 media-ctl -d /dev/media0 -V '"ov5640 4-003a":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_csiphy1":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_csid1":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_ispif1":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_vfe0_rdi1":0[fmt:UYVY8_2X8/1920x1080 field:none]'
 
@@ -64,6 +66,7 @@ fi
 
 if [ $key -eq 3 ]; then
 read -p "Press anykey to start streaming using cam0 and cam1" anykey
+
 # Set the pipeline format for cam0
 media-ctl -d /dev/media0 -V '"ov5640 4-003b":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_csiphy0":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_csid0":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_ispif0":0[fmt:UYVY8_2X8/1920x1080 field:none],"msm_vfe0_rdi0":0[fmt:UYVY8_2X8/1920x1080 field:none]'
 # Set the pipeline format for cam1
