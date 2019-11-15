@@ -1,7 +1,7 @@
 # Instructions for Caspa Camera and Tiny Caspa Camera on Overo COMs
 
 ## Hardware
-
+If you want to test the cameras, the image yocto-overo-rocko-2019-10-29-console is known-working for Caspa Camera and Tiny Caspa Camera
 ### Boards
 Choose either
 - an [Overo COMs] with one of the [Overo Expansion Boards] OR
@@ -27,12 +27,13 @@ The Caspa Camera (mt9v032) is set as default in Gumstix Yocto image
 The Tiny Caspa Camera need some modification on the device tree.
 
 First, download the new dtb files [here](Tiny-Caspa-dtbs.zip "dtb files for Tiny caspa camera")
-Then, extract it, and plug in the SD card you prepared, run:
+Then, Please change to the directory where Tiny-Caspa-dtbs was downloaded.
+Last, extract it, and plug in the SD card you prepared, run:
 ```
 # Mount the root filesystem, note change the "X" in /dev/sdX2 accroding to $ lsblk 
 # where your SD card is mounted in your machine
 $ sudo mount -t ext3 /dev/sdX2 /media/rootfs
-$ sudo cp -rf /Tiny-Caspa-dtbs/* /media/rootfs/boot/ && sync
+$ sudo cp -rf Tiny-Caspa-dtbs/* /media/rootfs/boot/ && sync
 
 # Unmount your rootfs partition
 $ sudo umount /media/rootfs
@@ -52,7 +53,7 @@ To use WiFi:
 2. At console, login as `root`.
 3. Run:
 ```
-$ nano /etc/wpa_supplicant/wpa_supplicant_wlan0.conf
+$ nano /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 ```
 4. Edit your "`ssid(network name)`" and "`psk(network password)`" and uncomment.
 5. Press `Ctrl+O` to save and `Ctrl+X` to exit.
