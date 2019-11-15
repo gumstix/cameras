@@ -1,5 +1,7 @@
 # Instructions for Caspa Camera and Tiny Caspa Camera on Overo COMs
 
+The image https://catalina.gumstix.com/binaries/14623/ is a known-working image for Caspa Camera and Tiny Caspa Camera on Overo.
+
 ## Hardware
 
 ### Boards
@@ -27,12 +29,13 @@ The Caspa Camera (mt9v032) is set as default in Gumstix Yocto image
 The Tiny Caspa Camera need some modification on the device tree.
 
 First, download the new dtb files [here](Tiny-Caspa-dtbs.zip "dtb files for Tiny caspa camera")
-Then, extract it, and plug in the SD card you prepared, run:
+Then, Please change to the directory where Tiny-Caspa-dtbs was downloaded.
+Last, extract it, and plug in the SD card you prepared, run:
 ```
 # Mount the root filesystem, note change the "X" in /dev/sdX2 accroding to $ lsblk 
 # where your SD card is mounted in your machine
 $ sudo mount -t ext3 /dev/sdX2 /media/rootfs
-$ sudo cp -rf /Tiny-Caspa-dtbs/* /media/rootfs/boot/ && sync
+$ sudo cp -rf Tiny-Caspa-dtbs/* /media/rootfs/boot/ && sync
 
 # Unmount your rootfs partition
 $ sudo umount /media/rootfs
@@ -52,7 +55,7 @@ To use WiFi:
 2. At console, login as `root`.
 3. Run:
 ```
-$ nano /etc/wpa_supplicant/wpa_supplicant_wlan0.conf
+$ nano /etc/wpa_supplicant/wpa_supplicant-wlan0.conf
 ```
 4. Edit your "`ssid(network name)`" and "`psk(network password)`" and uncomment.
 5. Press `Ctrl+O` to save and `Ctrl+X` to exit.
@@ -67,9 +70,10 @@ $ ping 8.8.8.8
 ```
 
 ## Camera Testing Scripts
+Please run the commands on the console, not host machine.
 Clone the repo for our Caspa camera source file, in there we have script `mt9v032_stream.sh` 
 and `ov7692_stream.sh` that runs on the board, it will detect if `gstreamer` is installed or 
-not, setup the pipelines and ask what IP address you want to stream to.
+not, setup the pipelines and ask what IP address you want to stream to. To find the IP addresss to stream to, please run command ifconfig on the host machine.
 
 ```
 # Run the following if you have a Caspa camera connected
